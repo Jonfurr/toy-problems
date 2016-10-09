@@ -15,27 +15,13 @@ function autograde (report) {
   }
   
   //iterate through each students array separating their name and scores
-  var result = {"classAve": 0};
-  var totalScore = [];
-  for (var i = 0; i < split.length; i++) {
-    var name = "";
-    var score = 0;
-    var numScores = 0;
-    for (var j = 0; j < split[i].length; j++) {
-      if (/[a-zA-Z]/.test(split[i][j])) {
-        name+= split[i][j];
-      }
-      if (/[0-9]/.test(split[i][j])) {
-        score+= +split[i][j];
-        totalScore.push(+split[i][j]);
-        numScores++;
-      }
-    }
-    //push key-value pair of student and their averaged scores to result object
-    result[name] = score / numScores;
-  }
+      
+  //push key-value pair of student and their averaged scores to result object
+   
   //average total score
-  var ave = totalScore.reduce((a, b) => a + b) / totalScore.length;
-  result.classAve = +ave.toFixed(2);
+  console.log(split);
   return result;
 }
+
+var example = "Jon 19 14 15 15 16\nJeremy 15 11 10 15 16\nJesse 19 17 20 19 18";
+autograde(example);
